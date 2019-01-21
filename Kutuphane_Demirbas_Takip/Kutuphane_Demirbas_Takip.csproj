@@ -1,0 +1,496 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0E697FCF-3419-4A60-8B0C-66D456DDC1C5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Kutuphane_Demirbas_Takip</RootNamespace>
+    <AssemblyName>Kutuphane_Demirbas_Takip</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.WebForms.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft SQL Server\100\SDK\Assemblies\Microsoft.SqlServer.ConnectionInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Management.Sdk.Sfc, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft SQL Server\100\SDK\Assemblies\Microsoft.SqlServer.Management.Sdk.Sfc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Smo, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft SQL Server\100\SDK\Assemblies\Microsoft.SqlServer.Smo.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.SmoExtended, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft SQL Server\100\SDK\Assemblies\Microsoft.SqlServer.SmoExtended.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin_Ekrani.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_Ekrani.Designer.cs">
+      <DependentUpon>Admin_Ekrani.cs</DependentUpon>
+    </Compile>
+    <Compile Include="export.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="export.Designer.cs">
+      <DependentUpon>export.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kitap_Ekle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kitap_Ekle.Designer.cs">
+      <DependentUpon>Kitap_Ekle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kitap_Sil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kitap_Sil.Designer.cs">
+      <DependentUpon>Kitap_Sil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kullanici_Ekle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kullanici_Ekle.Designer.cs">
+      <DependentUpon>Kullanici_Ekle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kullanici_Ekrani.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kullanici_Ekrani.Designer.cs">
+      <DependentUpon>Kullanici_Ekrani.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Giris.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Giris.Designer.cs">
+      <DependentUpon>Giris.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kullanici_Sil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kullanici_Sil.Designer.cs">
+      <DependentUpon>Kullanici_Sil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KutuphaneDemirbasVTDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KutuphaneDemirbasVTDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="KutuphaneDemirbasVTDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KutuphaneDemirbasVTDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Mudur_Ekrani.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mudur_Ekrani.Designer.cs">
+      <DependentUpon>Mudur_Ekrani.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Odunc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Odunc.Designer.cs">
+      <DependentUpon>Odunc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Personel_Ekrani.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personel_Ekrani.Designer.cs">
+      <DependentUpon>Personel_Ekrani.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Personel_Islemleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personel_Islemleri.Designer.cs">
+      <DependentUpon>Personel_Islemleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Personel_Sil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personel_Sil.Designer.cs">
+      <DependentUpon>Personel_Sil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Personel_Yetkilendir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personel_Yetkilendir.Designer.cs">
+      <DependentUpon>Personel_Yetkilendir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="rapor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rapor.Designer.cs">
+      <DependentUpon>rapor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sifremi_unutum.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sifremi_unutum.Designer.cs">
+      <DependentUpon>Sifremi_unutum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Sql_islemleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sql_islemleri.Designer.cs">
+      <DependentUpon>Sql_islemleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YayinEvi_Ekle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YayinEvi_Ekle.Designer.cs">
+      <DependentUpon>YayinEvi_Ekle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Yazar_Ekle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yazar_Ekle.Designer.cs">
+      <DependentUpon>Yazar_Ekle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Yedek.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yedek.Designer.cs">
+      <DependentUpon>Yedek.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Admin_Ekrani.resx">
+      <DependentUpon>Admin_Ekrani.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="export.resx">
+      <DependentUpon>export.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kitap_Ekle.resx">
+      <DependentUpon>Kitap_Ekle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kitap_Sil.resx">
+      <DependentUpon>Kitap_Sil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kullanici_Ekle.resx">
+      <DependentUpon>Kullanici_Ekle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kullanici_Ekrani.resx">
+      <DependentUpon>Kullanici_Ekrani.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Giris.resx">
+      <DependentUpon>Giris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kullanici_Sil.resx">
+      <DependentUpon>Kullanici_Sil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mudur_Ekrani.resx">
+      <DependentUpon>Mudur_Ekrani.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Odunc.resx">
+      <DependentUpon>Odunc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personel_Ekrani.resx">
+      <DependentUpon>Personel_Ekrani.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personel_Islemleri.resx">
+      <DependentUpon>Personel_Islemleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personel_Sil.resx">
+      <DependentUpon>Personel_Sil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personel_Yetkilendir.resx">
+      <DependentUpon>Personel_Yetkilendir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="rapor.resx">
+      <DependentUpon>rapor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Sifremi_unutum.resx">
+      <DependentUpon>Sifremi_unutum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sql_islemleri.resx">
+      <DependentUpon>Sql_islemleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YayinEvi_Ekle.resx">
+      <DependentUpon>YayinEvi_Ekle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yazar_Ekle.resx">
+      <DependentUpon>Yazar_Ekle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yedek.resx">
+      <DependentUpon>Yedek.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="KutuphaneDemirbasVTDataSet.xsc">
+      <DependentUpon>KutuphaneDemirbasVTDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="KutuphaneDemirbasVTDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>KutuphaneDemirbasVTDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="KutuphaneDemirbasVTDataSet.xss">
+      <DependentUpon>KutuphaneDemirbasVTDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="KutuphaneDemirbasVTDataSet1.xsc">
+      <DependentUpon>KutuphaneDemirbasVTDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="KutuphaneDemirbasVTDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>KutuphaneDemirbasVTDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="KutuphaneDemirbasVTDataSet1.xss">
+      <DependentUpon>KutuphaneDemirbasVTDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 ve x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 </ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="ACTIVEXLib">
+      <Guid>{012F24C1-35B0-11D0-BF2D-0000E8D0D146}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="CrystalAnalysisCommLayerLib">
+      <Guid>{AAA3345B-2177-4D19-8D75-21688FE36251}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="CrystalReportsCommonObjectModelLib">
+      <Guid>{FDB9B69E-BA79-4B13-9E96-8373AF162AEA}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="CrystalReportsControllersLib">
+      <Guid>{FA810FF5-70DA-4F98-A5E3-387D9577EF24}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="CrystalReportsCubeDefModelLib">
+      <Guid>{44AD71D4-4905-491D-B179-B5D91EB57374}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="CrystalReportsDataDefModelLib">
+      <Guid>{9B2F3E7B-8D45-47E8-95D3-3A9C1B22437F}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="CrystalReportsObjectFactoryLib">
+      <Guid>{A25D82D0-1501-4A89-BA92-B7E5B002EC4F}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="CrystalReportsReportDefModelLib">
+      <Guid>{BF40B97D-06EA-4AB1-91DE-18CB29A2B25A}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="DTSPipeline">
+      <Guid>{A6C13763-F975-4CAD-AAE2-50C691A27018}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Access.Dao">
+      <Guid>{4AC9E1DA-5BAD-4AC7-86E3-24F4CDCECA28}</Guid>
+      <VersionMajor>12</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9017179-library-icon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rsmLogin1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kilit.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
